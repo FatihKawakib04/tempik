@@ -1,0 +1,30 @@
+name = "tempik"
+main = "src/index.ts"
+compatibility_date = "2025-06-01"
+
+# Local dev: use workers.dev / localhost, no custom domain
+workers_dev = true
+
+# ---- D1 Database (local) ----
+[[d1_databases]]
+binding = "DB"
+database_name = "tempik-db"
+database_id = "tempik-db"
+
+# ---- Environment variables ----
+[vars]
+APP_NAME = "Tempik"
+MAIL_DOMAIN = "local.test"
+WEB_HOST = "localhost"
+
+# ---- Static assets (web frontend) ----
+[assets]
+directory = "./src/web"
+
+# ---- Observability ----
+[observability]
+enabled = true
+
+[dev]
+port = 8787
+local_protocol = "http"
